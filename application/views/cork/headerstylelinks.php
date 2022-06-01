@@ -7,3 +7,4 @@
         <link href="<?= base_url('assets/cork/css/simplelightbox.min.css')?>" rel="stylesheet" type="text/css" />
         <link href="<?= base_url('assets/cork/css/style.css')?>" rel="stylesheet" type="text/css" /> 
         <link href="<?= base_url('assets/cork/css/custom.css')?>" rel="stylesheet" type="text/css" />
+        <link href="<?= base_url('assets/cork/css/digital_certificate.css')?>" rel="stylesheet" type="text/css" />

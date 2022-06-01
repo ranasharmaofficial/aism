@@ -41,7 +41,8 @@ class Login extends MY_Controller {
             redirect('franchise-center');
 
         }else{
-            echo $this->session->set_flashdata('msg','Email or Password is Wrong');
+            // echo $this->session->set_flashdata('msg','Email or Password is Wrong');
+            $this->session->set_tempdata('error', '<div class="alert alert-danger fade show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong><i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Error!&nbsp;&nbsp;</strong>Email or Password is Invalid.</div>',5);
             redirect('login');
         }
     }

@@ -1,4 +1,214 @@
 <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title><?=$PageQry->page_title;?> - Aism Group</title>
+
+<?php include('headerstylelinks.php'); ?>
+ 
+</head>
+
+<body>
+
+<div class="wrapper">
+
+   <?php include_once('header.php'); ?>
+
+  <section class="page_breadcrumbs ds color parallax about_us section_padding_top">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-12 text-center">
+
+          <h2><?=$PageQry->page_title;?></h2>
+
+          <ol class="breadcrumb highlightlinks">
+
+            <li> <a href="<?php echo base_url(''); ?>"> Home </a> </li>
+
+            <li class="active"><?=$PageQry->page_title;?></li>
+
+          </ol>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="ovelay_1"></div>
+
+  </section>
+
+  <section class="padding-btop50">
+
+    <div class="container">
+
+       
+       <div class="row clearfix director-s">
+        <div class="content">
+               <h2><?=$PageQry->page_title;?></h2>
+               <div class="verify">
+                  <a href="#">Verifiy Certificate Details </a>
+               </div>
+               <div class="notepints">
+                  <div class="imgFlex">
+                     <img src="<?=base_url('assets/cork/images/bc-1.jpg');?>" alt="BC-1">
+                  </div>
+                  <ul>
+                     <li>Use <span>Adobe Reader</span> to download the Certificate.</li>
+                     <li>Use <span>Internet Explorer</span> to download the Certificate.</li>
+                     <li><a href="#"><span>Steps to Validate Digital Signature</span>. </a></li>
+                     <li class="lstmarqueee">
+                        <marquee><?=$PageQry->page_sub_title;?></marquee>
+                     </li>
+                  </ul>
+                  <div class="imgFlex">
+                     <img src="<?=base_url('assets/cork/images/bc-1.jpg');?>" alt="">
+                  </div>
+               </div>
+               <div class="tableformate mb-4 mt-4">
+                  <form method="post" action="<?=base_url('digitally_ecertificate/insert');?>" autocomplete="off">
+                     <div class="tbl-row tbl-row1">
+                        <div class="tbl-cl tbl-cl1">
+                           <h4>Select type of <br> Certificate</h4>
+                        </div>
+                        <div class="tbl-cl tbl-cl2">
+                           <div class="tbl-clrow">
+                              <p><span>Regular</span> (CCC/BCC/NDLM &amp; O/A/B/C etc.)</p>
+                              <p><span>Moduler</span> (only O/A/B/C module wise)</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tbl-row tbl-row-tab">
+                        <div class="tabbtn tabbtn1">
+                           <input type="radio" name="cert_type" value="Regular" id="cert_type1" required=""> <label class="cert_type1" for="cert_type1">Regular Certificate</label>
+                        </div>
+                        <div class="tabbtn tabbtn2">
+                           <input type="radio" name="cert_type" value="Moduler" id="cert_type2" required=""> <label class="cert_type1" for="cert_type2">Moduler Certificate</label>
+                        </div>
+                     </div>
+                     <div class="RegularCertificate">
+                        <div class="tbl-row">
+                           <div class="col-title">
+                              <h5>Course For</h5>
+                           </div>
+                           <div class="col-input">
+                              <select name="course" required="">
+                                 <option value="">Select Course</option>
+                                 <?php foreach($CourseQry as $ResRow){?>
+                                 <option value="<?=$ResRow->id;?>"><?=$ResRow->name;?></option>
+                                 <?php }?>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="tbl-row">
+                           <div class="col-title">
+                              <h5>Year</h5>
+                           </div>
+                           <div class="col-input">
+                              <select name="year" required="">
+                                 <option value="">Select Year</option>
+                                 <?php $Yr = range(date('Y'),2010);
+                                    $curY = date('Y');  
+                                    foreach($Yr as $yy){?>
+                                 <option value="<?=$yy;?>"<?php if($yy==$curY){echo "selected";}?>><?=$yy;?></option>
+                                 <?php }?>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="tbl-row">
+                           <div class="col-title">
+                              <h5>Month</h5>
+                           </div>
+                           <div class="col-input">
+                              <select name="month" required="">
+                                 <option value="">Select Month</option>
+                                 <?php $Mont = array('Jan','Feb','Mar','Apr','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+                                    $curM = date('M');
+                                    foreach($Mont as $mm){?>
+                                 <option value="<?=$mm;?>"<?php if($mm==$curM){echo "selected";}?>><?=$mm;?></option>
+                                 <?php }?>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="tbl-row">
+                           <div class="col-title">
+                              <h5>Roll No.</h5>
+                           </div>
+                           <div class="col-input">
+                              <input type="text" name="rollno" required="">
+                           </div>
+                        </div>
+                        <div class="tbl-row">
+                           <div class="col-title">
+                              <h5>Student DOB</h5>
+                           </div>
+                           <div class="col-input">
+                              <input type="date" name="dob" required="" data-date-format="dd/mm/yyyy" placeholder="mm-dd-yyyy">
+                           </div>
+                        </div>
+                        <!--<div class="tbl-row">
+                           <div class="col-title"><h5>Captcha Image</h5></div>
+                           <div class="col-input">
+                             <img src="img/CaptchaImage.jpg" alt="">
+                           </div>
+                           </div>
+                           <div class="tbl-row">
+                           <div class="col-title"><h5>Captcha Code</h5></div>
+                           <div class="col-input">
+                            <input type="text" name="captch code">
+                           </div>
+                           </div>-->
+                        <div class="tbl-row">
+                           <div class="col-title"></div>
+                           <div class="col-input">
+                              <input class="submitt2" name="Save" type="submit" value="SUBMIT">
+                              <button class="buttonn2"  type="reset">REFRESH</button>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+                  <?php  echo $this->session->userdata('message');
+                     echo $this->session->unset_userdata('message');?>
+                  <div class="ModulerCertificate">
+                     <div class="tbl-row">
+                     </div>
+                  </div>
+               </div>
+            </div>
+       </div>
+
+    </div>
+
+  </section>
+
+  <!--=====footer start=========-->
+
+  <?php include_once('footer.php'); ?>
+
+  <!--=====footer start end=========-->
+
+</div>
+
+
+</body>
+
+</html>
+
+
+<?php if(false) { ?>
+<!DOCTYPE html>
 <html lang="en">
    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <head>
@@ -295,3 +505,4 @@
    <script src="<?=base_url('assets/cork/js/custom.js')?>"></script>
 </body>
 </html>
+<?php } ?>

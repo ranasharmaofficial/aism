@@ -28,6 +28,10 @@
                             <div class="form">
                                 <div class="tab-content">
                                     <div id="signup">
+                                    <?php 
+				echo $this->session->tempdata('success');
+				echo $this->session->tempdata('error');
+			?>
                                         <div class="section-title mb20 headline text-center ">
                                             <span class="subtitle text-uppercase">Login Form</span>
                                             <h2>Center <span>Login</span></h2>

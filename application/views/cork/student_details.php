@@ -179,7 +179,7 @@
 						  <th>Student Photo :- </th>
 						  <td>
 							 <?php if(!empty($PageQry->image)){?>
-							 <img src="<?=base_url('assets/images/student');?>/<?=$PageQry->image;?>" height="50" width="50">
+							 <img style="height:80px;width:auto;" src="<?=base_url('assets/images/student');?>/<?=$PageQry->image;?>" height="50" width="50">
 							<a href="<?=base_url('assets/images/student');?>/<?=$PageQry->image;?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
 							<?php }else{echo "NA";}?>
 						  </td>
@@ -188,7 +188,7 @@
 						  <th>Student Signature :- </th>
 						  <td>
 							 <?php if(!empty($PageQry->sign)){?>
-							 <img src="<?=base_url('assets/images/student');?>/<?=$PageQry->sign;?>" height="50" width="50">
+							 <img style="height:80px;width:auto;" src="<?=base_url('assets/images/student');?>/<?=$PageQry->sign;?>" height="50" width="50">
 							<a href="<?=base_url('assets/images/student');?>/<?=$PageQry->sign;?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
 							<?php }else{echo "NA";}?>
 						  </td>
