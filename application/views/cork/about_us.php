@@ -71,7 +71,7 @@
 
           <div class="tittle_left">
 
-            <h2 class="text-uppercase">About AIMS Group</h2>
+            <h2 class="text-uppercase">About AISM Group</h2>
 
           </div>
 
