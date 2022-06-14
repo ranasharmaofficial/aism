@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2022 at 08:42 AM
+-- Generation Time: Jun 14, 2022 at 10:50 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -20,6 +20,55 @@ SET time_zone = "+00:00";
 --
 -- Database: `aism_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `call_requests`
+--
+
+CREATE TABLE `call_requests` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(155) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `whatsapp` varchar(15) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `course` varchar(100) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `call_requests`
+--
+
+INSERT INTO `call_requests` (`id`, `name`, `email`, `whatsapp`, `city`, `course`, `created_at`) VALUES
+(1, 'Rana', 'iamranasharma@gmail.com', '8825171386', 'Purnia', 'ADCA', '2022-06-02 13:27:18'),
+(2, 'AFTAB ALAM', 'abc@gmailc.om', '8825171386', 'Purnea', 'ADCA', '2022-06-02 13:29:31'),
+(3, 'AFTAB ALAM', 'abc@gmailc.om', '8825171386', 'Purnea', 'ADCA', '2022-06-02 13:46:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `consultation_request`
+--
+
+CREATE TABLE `consultation_request` (
+  `id` bigint(20) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `zip` varchar(100) NOT NULL,
+  `prefer` varchar(100) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `consultation_request`
+--
+
+INSERT INTO `consultation_request` (`id`, `first_name`, `last_name`, `email`, `phone`, `zip`, `prefer`, `created_at`) VALUES
+(1, 'Rana', 'Sharma', 'abc@gmailc.om', '9199758612', '854301', 'Virtual', '2022-06-02 14:42:15');
 
 -- --------------------------------------------------------
 
@@ -352,7 +401,10 @@ CREATE TABLE `tbl_admit_card` (
 
 INSERT INTO `tbl_admit_card` (`id`, `franchise_id`, `student_id`, `enrollment_no`, `student_name`, `date_of_birth`, `mother_name`, `father_name`, `session`, `school_name`, `center_code`, `roll_no`, `class_id`, `subject_id`, `subject_date`, `image`, `status`, `created_date`) VALUES
 (9, 8, 17, 10010014, 'abhay singh', '1996-02-01', 'v singh', 'p singh', '2021-2022', 'LBSTC', '100108', '10001017', 7, '11,12', '[\"2021-12-08T19:29\",\"2021-12-27T19:29\"]', 'face3.jpg', 1, '2021-12-27 22:27:32'),
-(10, 8, 18, 10010015, 'sanjay', '1999-01-01', 'rani', 'arun', '2022', 'LBSTC', '100108', '10001018', 7, '11,12', '[\"2022-05-02T10:00\",\"2022-05-02T10:00\"]', 'PHOTO5.jpeg', 1, '2022-02-05 16:17:26');
+(10, 8, 18, 10010015, 'sanjay', '1999-01-01', 'rani', 'arun', '2022', 'LBSTC', '100108', '10001018', 7, '11,12', '[\"2022-05-02T10:00\",\"2022-05-02T10:00\"]', 'PHOTO5.jpeg', 1, '2022-02-05 16:17:26'),
+(11, 8, 17, 10010018, 'Rana Sharma', '1996-02-01', 'v singh', 'p singh', '2021-2022', 'LBSTC', '100108', '10001017', 7, '11,12', '[\"2021-12-08T19:29\",\"2021-12-27T19:29\"]', 'face3.jpg', 1, '2021-12-27 22:27:32'),
+(12, 4, 20, 10010016, 'Saroj', '2022-01-01', 'asc', 'asc', 'asc', 'KVS', '100104', '10001020', 1, '4', '[\"2022-06-05T15:14\"]', 'course-16447291232.jpg', 1, '2022-06-03 07:42:56'),
+(13, 9, 1, 0, 'Avinash', '1980-01-01', 'MK Sharma', 'Ak Sharma', '2022', 'Don Bosco School Purnia', '100109', '1000101', 1, '', '[\"2022-06-08T14:19\"]', '19-SM2094881645513173ranaSharma11.jpg', 1, '2022-06-03 08:49:09');
 
 -- --------------------------------------------------------
 
@@ -629,7 +681,9 @@ CREATE TABLE `tbl_digital_certificate` (
 --
 
 INSERT INTO `tbl_digital_certificate` (`id`, `certificate_type`, `course`, `year`, `month`, `rollno`, `dob`, `status`, `modified`) VALUES
-(1, 'Moduler', '6', '2022', 'Jun', '2', '2022-06-08', 1, '2022-06-01 10:29:48');
+(1, 'Moduler', '6', '2022', 'Jun', '2', '2022-06-08', 1, '2022-06-01 10:29:48'),
+(2, 'Moduler', '6', '2022', 'Aug', '516516', '2022-06-28', 1, '2022-06-01 12:56:44'),
+(3, 'Regular', '6', '2022', 'Jun', '651', '2022-06-23', 1, '2022-06-02 10:35:16');
 
 -- --------------------------------------------------------
 
@@ -708,7 +762,8 @@ CREATE TABLE `tbl_enrollment` (
 INSERT INTO `tbl_enrollment` (`id`, `franchise_id`, `student_id`, `franchise_name`, `student_name`, `date_of_birth`, `mother_name`, `father_name`, `session`, `school_name`, `center_code`, `cast`, `class_id`, `subject_id`, `roll_no`, `enrollment_no`, `image`, `status`, `created_date`) VALUES
 (13, 8, 16, 'LAL BAHADUR SHASTRI TRANING CAMPUS', 'abhay singh', '1995-02-01', 'v devi', 'p singh', '2021-2022', 'LBSTC', '100108', 'General', 7, '11,12', '10001016', 10010013, 'o3.jpg', 1, '2021-12-27 22:16:52'),
 (14, 8, 17, 'LAL BAHADUR SHASTRI TRANING CAMPUS', 'abhay singh', '1996-02-01', 'v singh', 'p singh', '2021-2022', 'LBSTC', '100108', 'General', 7, '11,12', '10001017', 10010014, 'face3.jpg', 1, '2021-12-27 22:27:09'),
-(15, 8, 18, 'LAL BAHADUR SHASTRI TRANING CAMPUS', 'sanjay', '1999-01-01', 'rani', 'arun', '2022', 'LBSTC', '100108', 'General', 7, '11,12', '10001018', 10010015, 'PHOTO5.jpeg', 1, '2022-02-05 16:16:02');
+(15, 8, 18, 'LAL BAHADUR SHASTRI TRANING CAMPUS', 'sanjay', '1999-01-01', 'rani', 'arun', '2022', 'LBSTC', '100108', 'General', 7, '11,12', '10001018', 10010015, 'PHOTO5.jpeg', 1, '2022-02-05 16:16:02'),
+(16, 4, 20, 'Gupta Sunil', 'Saroj', '2022-01-01', 'asc', 'asc', 'asc', 'KVS', '100104', 'General', 1, '4', '10001020', 10010016, 'course-16447291232.jpg', 1, '2022-06-03 07:42:12');
 
 -- --------------------------------------------------------
 
@@ -995,7 +1050,7 @@ INSERT INTO `tbl_pages` (`id`, `page_name`, `page_title`, `page_sub_title`, `pag
 (53, 'Results', 'Results', '', 'Results', 'Results', 'Results', '', 1, '27-10-2021 4:02:14 pm'),
 (54, 'SCHOLARSHIPS', 'PROTSAHAN PURASKAR SCHEME (ERSTWHILE SCHOLARSHIP SCHEME) FOR SC/ST/PHYSICALLY HANDICAPPED AND FEMALE STUDENTS PURSUING NIELIT (FORMERLY DOEACC SOCIETY)', '', 'SCHOLARSHIPS', 'SCHOLARSHIPS', 'SCHOLARSHIPS', '<p>Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>\r\n\r\n<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>\r\n\r\n<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>', 1, '28-10-2021 3:29:23 pm'),
 (55, 'Placement', 'ONLINE PLACEMENT PORTAL', '', 'Placement', 'Placement', 'Placement', '<p>Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>\r\n\r\n<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>\r\n\r\n<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>', 1, '01-06-2022 10:32:51 am'),
-(56, 'Digitally Ecertificate', 'DIGITALLY SIGNED CERTIFICATE FOR LBSTC EXAMINATIONS', 'DIGITALLY SIGNED CERTIFICATE FOR LBSTC EXAMINATIONS', 'Digitally Ecertificate', 'Digitally Ecertificate', 'Digitally Ecertificate', '', 1, '28-10-2021 2:00:28 pm');
+(56, 'Digitally Ecertificate', 'DIGITALLY SIGNED CERTIFICATE FOR AISM EXAMINATIONS', 'DIGITALLY SIGNED CERTIFICATE FOR AISM EXAMINATIONS', 'Digitally Ecertificate', 'Digitally Ecertificate', 'Digitally Ecertificate', '', 1, '03-06-2022 1:03:33 pm');
 
 -- --------------------------------------------------------
 
@@ -1045,7 +1100,11 @@ INSERT INTO `tbl_payment` (`id`, `franchaise_id`, `debited_by`, `school_name`, `
 (28, 8, '10010014', 'LBSTC', '100108', '18500.00', '300.00', 'debited', '2021-12-27 22:27:09'),
 (29, 8, '10010015', 'LBSTC', '100108', '18200.00', '300.00', 'debited', '2022-02-05 16:16:02'),
 (30, 9, NULL, 'Don Bosco School Purnia', '100109', '5000.00', '0.00', 'credited', '2022-05-30 20:12:54'),
-(31, 9, NULL, 'Don Bosco School Purnia', '100109', '333.00', '0.00', 'credited', '2022-06-01 05:07:51');
+(31, 9, NULL, 'Don Bosco School Purnia', '100109', '333.00', '0.00', 'credited', '2022-06-01 05:07:51'),
+(32, 9, NULL, 'Don Bosco School Purnia', '100109', '100.00', '0.00', 'credited', '2022-06-02 19:41:21'),
+(33, 4, NULL, 'KVS', '100104', '100.00', '0.00', 'credited', '2022-06-02 19:41:46'),
+(34, 4, NULL, 'KVS', '100104', '5000.00', '0.00', 'credited', '2022-06-02 19:42:03'),
+(35, 4, '10010016', 'KVS', '100104', '4000.00', '1000.00', 'debited', '2022-06-03 07:42:12');
 
 -- --------------------------------------------------------
 
@@ -1231,14 +1290,6 @@ CREATE TABLE `tbl_results` (
   `created_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tbl_results`
---
-
-INSERT INTO `tbl_results` (`id`, `result_group_id`, `student_enrollment_number`, `roll_number`, `course_name`, `examination_year`, `student_name`, `father_name`, `center_name`, `subject_code`, `subject_name`, `max_number`, `min_number`, `marks_obtain_theory`, `marks_obtain_practical`, `file`, `created_date`) VALUES
-(14, '42d784919b0241129650976454d1d7bd', '10010014', '10001017', 'Advance Diploma in computer teacher\'s traning(ADIT)', '2021-2022', 'abhay singh', 'p singh', 'LBSTC', '199', 'TALLY ERP 9.0', 100, 33, 60, '', './assets/images/student/result/1640609527-1639750755-sample-result (4) (1).csv', '2021-12-27 07:22:07'),
-(15, '42d784919b0241129650976454d1d7bd', '10010014', '10001017', 'Advance Diploma in computer teacher\'s traning(ADIT)', '2021-2022', 'abhay singh', 'p singh', 'LBSTC', '198', 'COMPUTER FUNDAMENTAL, MS-WORD, MS-EXCEL, MS-POWER POINT', 100, 33, 44, '', './assets/images/student/result/1640609527-1639750755-sample-result (4) (1).csv', '2021-12-27 07:22:07');
-
 -- --------------------------------------------------------
 
 --
@@ -1408,42 +1459,37 @@ INSERT INTO `tbl_state` (`id`, `name`, `status`, `modified`) VALUES
 
 CREATE TABLE `tbl_student` (
   `id` int(11) NOT NULL,
-  `student_ack_id` varchar(100) NOT NULL,
+  `student_ack_id` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `admitted_course_id` int(11) NOT NULL,
-  `admitted_course` varchar(150) DEFAULT NULL,
-  `name` varchar(200) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `admitted_course` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `dob` date NOT NULL,
-  `fathers_name` varchar(150) NOT NULL,
-  `mothers_name` varchar(150) NOT NULL,
+  `fathers_name` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `mothers_name` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `cast` bigint(20) NOT NULL,
-  `phone` varchar(50) NOT NULL,
-  `address` varchar(300) NOT NULL,
-  `address2` varchar(250) DEFAULT NULL,
-  `session` varchar(50) NOT NULL,
+  `phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `address` varchar(300) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `address2` varchar(250) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `session` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `franchise_id` bigint(20) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `subject_id` varchar(100) NOT NULL,
-  `image` varchar(150) DEFAULT NULL,
-  `sign` varchar(150) DEFAULT NULL,
-  `doc1` varchar(150) DEFAULT NULL,
-  `doc2` varchar(150) DEFAULT NULL,
-  `doc3` varchar(150) DEFAULT NULL,
+  `subject_id` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `image` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `sign` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `doc1` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `doc2` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `doc3` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `status` int(11) NOT NULL,
-  `modified` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `modified` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `tbl_student`
 --
 
 INSERT INTO `tbl_student` (`id`, `student_ack_id`, `admitted_course_id`, `admitted_course`, `name`, `email`, `dob`, `fathers_name`, `mothers_name`, `cast`, `phone`, `address`, `address2`, `session`, `franchise_id`, `class_id`, `subject_id`, `image`, `sign`, `doc1`, `doc2`, `doc3`, `status`, `modified`) VALUES
-(18, '10001018', 6, 'ADIT', 'sanjay', 'abc@gmail.com', '1999-01-01', 'arun', 'rani', 2, '9999999999', 'delhi', 'delhi', '2022', 8, 7, '11,12', 'PHOTO5.jpeg', 'PHOTO6.jpeg', 'PRABHA_TRIPATHI_TC.jpg', 'PRABHA_TRIPATHI_TC1.jpg', 'PRABHA_TRIPATHI_TC2.jpg', 1, '05-02-2022 11:15:45 am'),
-(19, '10001019', 0, 'ADCA', 'Rana Sharma', 'iamranasharma@gmail.com', '2019-02-01', 'Mk', 'M', 2, '8825171386', 'ccas', 'scas', 'asc', 4, 2, '9', 'course-1644729123.jpg', 'course-16447291231.jpg', 'course-1644729123.jpg', 'course-16447291231.jpg', 'course-16447291232.jpg', 1, '31-05-2022 9:58:03 am'),
-(20, '10001020', 0, 'DCA', 'Saroj', 'sckj@gmail.com', '2022-01-01', 'asc', 'asc', 2, '9199758612', 'ac', 'ds', 'asc', 4, 1, '4', 'course-16447291232.jpg', 'course-16447291233.jpg', 'course-16447291233.jpg', '', '', 1, '31-05-2022 9:59:12 am'),
-(21, '10001021', 0, 'BCA', 'Avinash Sir', 'iam@gmail.com', '2009-01-01', 'Ok sharma', 'ko devi', 1, '9199758612', 'acs', 'sac', 'asc', 4, 4, '', 'd6cuvckcd1s3laop6a9b.jpg', 'd6cuvckcd1s3laop6a9b1.jpg', 'apple-touch-icon.png', '', '', 1, '31-05-2022 1:24:11 pm'),
-(22, '10001022', 0, 'MCA', 'Saurav Sagar', 'askchb@gmail.com', '2022-01-01', 'ok', 'ok', 2, '9199758612', 'ds', 'hg', 'hg', 9, 1, '', 'team.png', 'team1.png', 'team.png', '', '', 1, '31-05-2022 1:44:29 pm'),
-(23, '10001023', 0, 'BBA', 'Avinash Sir', 'iam@gmail.com', '1999-08-02', 'Ak', 'Ak', 2, '9199758612', 'Delhi', 'Delhi', '2022-2023', 9, 7, '', '19-SM2094881645513173ranaSharma.jpg', '19-SM2094881645513173ranaSharma1.jpg', 'course-16447291234.jpg', '', '', 1, '01-06-2022 12:10:21 pm');
+(1, '1000101', 0, 'BCA', 'Avinash', 'iamrana@gmail.com', '1980-01-01', 'Ak Sharma', 'MK Sharma', 2, '9199758612', 'Purnia', 'Purnia', '2022', 9, 1, '', '19-SM2094881645513173ranaSharma11.jpg', '19-SM2094881645513173ranaSharma12.jpg', '19-SM2094881645513173ranaSharma1.jpg', '', '', 1, '03-06-2022 2:18:33 pm');
 
 -- --------------------------------------------------------
 
@@ -1558,9 +1604,27 @@ INSERT INTO `tbl_video` (`id`, `name`, `description`, `image`, `status`, `modifi
 --
 
 --
+-- Indexes for table `call_requests`
+--
+ALTER TABLE `call_requests`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `consultation_request`
+--
+ALTER TABLE `consultation_request`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_admit_card`
+--
+ALTER TABLE `tbl_admit_card`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1670,22 +1734,40 @@ ALTER TABLE `tbl_video`
 --
 
 --
+-- AUTO_INCREMENT for table `call_requests`
+--
+ALTER TABLE `call_requests`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `consultation_request`
+--
+ALTER TABLE `consultation_request`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tbl_admit_card`
+--
+ALTER TABLE `tbl_admit_card`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `tbl_digital_certificate`
 --
 ALTER TABLE `tbl_digital_certificate`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_enrollment`
 --
 ALTER TABLE `tbl_enrollment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_franchise`
@@ -1703,13 +1785,13 @@ ALTER TABLE `tbl_pages`
 -- AUTO_INCREMENT for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `tbl_results`
 --
 ALTER TABLE `tbl_results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_services`
@@ -1745,7 +1827,7 @@ ALTER TABLE `tbl_state`
 -- AUTO_INCREMENT for table `tbl_student`
 --
 ALTER TABLE `tbl_student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_subject`
