@@ -76,11 +76,15 @@ class Createpdf extends MY_Controller
         $this->load->helper('download');
         $enroll = $this->input->post('enroll');
         $getStudent = $this->db->where('student_ack_id',$enroll)->get('tbl_student')->row();
+        
         $studentId = $getStudent->id;
         $emptyData = $this->db->where('student_id',$studentId)->get('tbl_admit_card')->num_rows();
+        
         if ($captchaResult == $checkTotal) {
             if($emptyData > 0) {
                 $getAdmitCard = $this->db->where('student_id',$studentId)->get('tbl_admit_card')->row();
+                // print_r($getAdmitCard);
+                // die;
                 $data = [];
                 $data['studentPhoto'] = $getStudent->image;
                 $data['course_name'] = $getStudent->admitted_course;

@@ -1,4 +1,229 @@
 <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<title>FRANCHISE CENTRE - Welcome aismgroup.com</title>
+
+<?php include('headerstylelinks.php'); ?>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+   <?php include_once('header.php'); ?>
+
+  <section class="page_breadcrumbs ds color parallax about_us section_padding_top">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-12 text-center">
+
+          <h2>FRANCHISE CENTRE</h2>
+
+          <ol class="breadcrumb highlightlinks">
+
+            <li> <a href="<?php echo base_url(''); ?>"> Home </a> </li>
+
+            <li class="active">FRANCHISE CENTRE</li>
+
+          </ol>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="ovelay_1"></div>
+
+  </section>
+
+  <section class="sction_style1 white_bg">
+            <div class="container">
+                <div class="row clearfix about-section">
+                    <div class="col-md-12 col-sm-6">
+                        <form action="" method="post">
+                            <div class="padding-btop30 no-maxpadding text-justify">
+                                <div class="tittle_1 about-us-hd certificate">
+                                    <h3>FRANCHISE CENTRE</h3>
+                                </div>
+                                <div class="certificate-bar">
+                                    <h3 style="font-size: 20px;text-align:center'
+    font-weight: 600;
+    color: #3e3f94;
+    margin: 0 0 15px;
+    text-align: left;" class="cent">SEND REQUEST FOR TESTING CENTER</h3>
+                                    <div class="row ">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group">
+
+                                            <input type="text" class="form-control input-lg" placeholder="Your Name"
+                                                autocomplete="off" name="certificate_no">
+                                        </div>
+                                        <div class="col-md-6 col-xs-12 col-sm-12 form-group">
+
+                                            <input type="text" class="form-control input-lg" placeholder="Email-Address"
+                                                autocomplete="off" name="certificate_no">
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row ">
+
+                                        <div class="col-md-12 col-xs-12 col-sm-12 form-group">
+
+                                            <input type="text" class="form-control input-lg" placeholder="Phone Number"
+                                                autocomplete="off" name="certificate_no">
+                                        </div>
+
+                                        <div class="submitbtn">
+                                            <input type="submit" value="SUBMIT">
+                                        </div>
+                                        <div class="franchaiseCenter franchaiseCenter123">
+                                            <div class="franchaise1">
+                                                <h3>Search Centers</h3>
+
+                                                <div class="slccenter">
+                                                    <form
+                                                        action="https://www.lbstc.org.in/franchise-centre/AjaxgetFranchise"
+                                                        id="search_center">
+                                                        <div class="row">
+                                                            <div class="col-sm-5 ">
+
+                                                                <div class="form-group">
+                                                                    <select name="state_id" id="state_id">
+                                                                        <option>--Choose State--</option>
+                                                                        <?php foreach($StateQry as $StateRow){?>
+										<option value="<?=$StateRow->id?>"><?=$StateRow->name?></option>
+									<?php }?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-5">
+                                                                <div class="form-group">
+                                                                    <select name="city_id" id="city_id">
+                                                                        <option>--Choose City--</option>
+                                                                        <?php foreach($CityQry as $CityRow){?>
+										<option value="<?=$CityRow->id?>"><?=$CityRow->name?></option>
+									<?php }?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2">
+                                                                <div class="searchbtn">
+                                                                    <a href="#" id="search">SEARCH</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+						</form>
+                    </div>
+
+
+
+
+                </div>
+                <section>
+                    <table>
+                        <tr>
+                            <th>Center Name</th>
+                            <th>
+                                Contact Person</th>
+                            <th>Contact Email</th>
+                            <th>
+                                Contact Phone</th>
+                            <th>
+                                Address</th>
+                        </tr>
+                        <?php $c=0; foreach($FranchiseQry as $FranchiseRow){ $c++; ?>
+						<tr>
+                            <td><?=$FranchiseRow->franchise_school?></td>
+                            <td><?=$FranchiseRow->franchise_name?></td>
+                            <td><?=$FranchiseRow->franchise_email?></td>
+                            <td><?=$FranchiseRow->franchise_phone?></td>
+                            <td><?=$FranchiseRow->franchise_address?></td>
+                        </tr>
+                        <?php } ?>
+
+                    </table>
+                </section>
+            </div>
+        </section>
+
+  <!--=====footer start=========-->
+<script type='text/javascript'>
+  $(document).ready(function(){
+ 
+   $('#state_id').change(function(){
+       var id = $(this).val(); 
+    $.ajax({
+     url:"<?=base_url('franchise-centre/AjaxgetData/')?>"+id,
+     method: 'post',
+     data: {id: id},
+     dataType: 'html',
+     success: function(data){
+        $('#city_id').html(data);
+     }
+   });
+  });
+ });
+ </script>
+ <script type='text/javascript'>
+  $(document).ready(function(){
+  	$('#fatchAjax').hide();
+ 	 $('#search').click(function (event) {
+        event.preventDefault();
+   var idserch = $("#search_center").attr("action");
+    var state_id = $('#state_id').val();
+    var city_id = $('#city_id').val();
+    $.ajax({
+     url:idserch,
+     method: 'post',
+     data: {state_id: state_id, city_id: city_id},
+     dataType: 'html',
+     success: function(data){
+     		$('#fatchAjax').show();
+     		console.log(data);
+     		$('#display_row1 , #display_row2 ,#display_row3 , #display_row4 ,#display_row5 ,#display_row6').hide();
+        $('#fatchAjax').html(data);
+     }
+   });
+  });
+ });
+ </script>
+  <?php include_once('footer.php'); ?>
+
+  <!--=====footer start end=========-->
+
+</div>
+
+
+</body>
+
+</html>
+
+
+
+
+<?php if(false) { ?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -245,3 +470,4 @@
  </script>
 </body>
 </html>
+<?php } ?>

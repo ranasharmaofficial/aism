@@ -65,6 +65,7 @@ $route["event/(.*)"] = 'events/details/$1';
 $route["product/(.*)"] = 'book_online/details/$1';
 
 //Rana routes
+$route["call-request"] = 'juggler/request/callRequest';
 $route["ohsas-45001-lead-auditor"] = 'About_us/ohsasLeadAuditor';
 $route["qms-iso-9001-lead-auditor"] = 'About_us/qmsIsoLeadAuditor';
 $route["iso-45001-2018-irca-lead-auditor"] = 'About_us/isoIrcaLeadAuditor';

@@ -6142,23 +6142,13 @@ ul.pagination li:hover a, ul.pagination li a:focus, ul.pagination li:hover butto
 }
 
 .footer .footer_bg h3 {
-
 	font-size: 1.4em;
-
 	font-weight: 600;
-
 	font-size: 22px;
-
 	position: relative;
-
-	
-
-	color: #020202;
-
+	color: #fff;
 	padding-bottom: 5px;
-
 	margin-bottom: 30px;
-
 }
 
 .footer .footer_bg h3:after {

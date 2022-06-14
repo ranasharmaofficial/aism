@@ -1,6 +1,8 @@
 <?php
-//echo "<pre>";print_r($data);die;
+
 tcpdf();
+// echo "<pre>";print_r($data);die;
+ 
 $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 $obj_pdf->SetCreator(PDF_CREATOR);
 #$title = "PDF Report";
@@ -42,20 +44,9 @@ $content = <<<EOD
                         <td style="width:100%;padding:0;text-align:center;border:none;vertical-align:top">
                             <div style="display:inline-block;padding:5px;margin:4px auto;width:90%">
                                 <span style="color:maroon;display:block;font-size:25px;font-family: auto; font-weight:500;">
-                                    Lal Bahadur Shastri Training Campus
+                                    AISM
                                 </span>
-                                <br><br>
-                                <span style="color:darkblue;display:block;font-size:12px;font-family: initial; font-weight:600;">
-                                    NAI DISHA JAN KALYAN TRUST
-                                </span>
-                                <br>
-                                <span style="color:darkblue;display:block;font-size:10px;font-family: initial; font-weight:600;">
-                                    Regd. by govt. of NCT of New Delhi, Regn. No.1053 
-                                </span>
-                                <br>
-                                <span style="color:#fff; background-color: maroon; font-size:14px; font-family: initial; font-weight:600;">
-                                An ISO 9001:2008 Certified
-                                </span>
+                                
                             </div>
                         </td>
                     </tr>
@@ -193,7 +184,7 @@ $content .= <<<EOD
                                     </td>
                                     <td style="text-align: center; vertical-align: bottom; width: 100px" >
                                         <br><br>
-                                        <img src="{$stamp2}" >
+                                        
                                     </td>
                                 </tr>
                                 <tr>

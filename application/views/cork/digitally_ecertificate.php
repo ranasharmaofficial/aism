@@ -57,7 +57,12 @@
        
        <div class="row clearfix director-s">
         <div class="content">
-               <h2><?=$PageQry->page_title;?></h2>
+                
+			   <div class="tittle_left">
+
+            <h2 class="text-uppercase"><?=$PageQry->page_title; ?></h2>
+
+          </div>
                <div class="verify">
                   <a href="#">Verifiy Certificate Details </a>
                </div>

@@ -66,7 +66,7 @@
                <li> <a href="<?=base_url('juggler/profile_page')?>"> Profile </a> </li>
             </ul>
          </li>
-         <li class="menu">
+         <?php /*<li class="menu">
             <a href="#post" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                <div class="">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay">
@@ -107,8 +107,8 @@
                <li> <a href="<?=base_url('juggler/events')?>"> Events </a> </li>
                <li> <a href="<?=base_url('juggler/events/add')?>"> Add Event </a> </li>
             </ul>
-         </li>
-         <?php /*
+         </li> 
+         
             <li class="menu"> <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             
               <div class="">
@@ -141,7 +141,7 @@
          <li> <a href="<?=base_url('juggler/services/add')?>"> Add Services </a> </li>
       </ul>
       </li>
-      */?>
+      
       <li class="menu">
          <a href="#lms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <div class="">
@@ -161,7 +161,7 @@
             <li> <a href="<?=base_url('juggler/quizzes')?>"> Quizzes </a> </li>
             <li> <a href="<?=base_url('juggler/quizzes/add')?>"> Add Quizzes </a> </li>
          </ul>
-      </li>
+      </li>*/?>
       <li class="menu">
          <a href="#courses" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <div class="">
@@ -214,6 +214,7 @@
             <li> <a href="<?=base_url('juggler/student_zone/result')?>">Result List</a></li>
          </ul>
       </li>
+	  <?php /*
       <li class="menu">
          <a href="#faq" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <div class="">
@@ -234,6 +235,67 @@
             <li> <a href="<?=base_url('juggler/faq/add')?>"> Add Faq </a> </li>
          </ul>
       </li>
+	  <li class="menu">
+         <a href="#team" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <div class="">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+               </svg>
+               <span>Our Team</span> 
+            </div>
+            <div>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+               </svg>
+            </div>
+         </a>
+         <ul class="collapse submenu list-unstyled" id="team" data-parent="#accordionExample">
+            <li> <a href="<?=base_url('juggler/our_team')?>"> Our Team </a> </li>
+            <li> <a href="<?=base_url('juggler/our_team/add')?>"> Add Our Team </a> </li>
+         </ul>
+      </li>
+      <li class="menu">
+         <a href="#apply" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <div class="">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+               </svg>
+               <span>How to Apply</span> 
+            </div>
+            <div>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+               </svg>
+            </div>
+         </a>
+         <ul class="collapse submenu list-unstyled" id="apply" data-parent="#accordionExample">
+            <li> <a href="<?=base_url('juggler/apply')?>"> How to Apply </a> </li>
+            <li> <a href="<?=base_url('juggler/apply/add')?>"> Add Apply </a> </li>
+         </ul>
+      </li>
+      <li class="menu">
+         <a href="#book" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <div class="">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+               </svg>
+               <span>Book Online</span> 
+            </div>
+            <div>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+               </svg>
+            </div>
+         </a>
+         <ul class="collapse submenu list-unstyled" id="book" data-parent="#accordionExample">
+            <li> <a href="<?=base_url('juggler/book_online')?>"> Book Published </a> </li>
+            <li> <a href="<?=base_url('juggler/book_online/add')?>"> Add Book Published </a> </li>
+         </ul>
+      </li>
+	  */?>
       <li class="menu">
          <a href="#location" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <div class="">
@@ -296,7 +358,7 @@
             <li> <a href="<?=base_url('juggler/franchise/add')?>"> Add Franchise </a> </li>
          </ul>
       </li> -->
-
+<?php  /*
       <li class="menu">
          <a href="#portfolio" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <div class="">
@@ -398,7 +460,7 @@
             <li> <a href="<?=base_url('juggler/why_choose')?>"> Why Choose </a> </li>
             <li> <a href="<?=base_url('juggler/why_choose/add')?>"> Add Choose</a> </li>
          </ul>
-      </li>
+      </li>*/?>
       <li class="menu">
          <a href="<?=base_url('juggler/enquiry')?>" aria-expanded="false" class="dropdown-toggle">
             <div class="">
@@ -410,66 +472,7 @@
             </div>
          </a>
       </li>
-      <li class="menu">
-         <a href="#team" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-            <div class="">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
-                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-               </svg>
-               <span>Our Team</span> 
-            </div>
-            <div>
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-               </svg>
-            </div>
-         </a>
-         <ul class="collapse submenu list-unstyled" id="team" data-parent="#accordionExample">
-            <li> <a href="<?=base_url('juggler/our_team')?>"> Our Team </a> </li>
-            <li> <a href="<?=base_url('juggler/our_team/add')?>"> Add Our Team </a> </li>
-         </ul>
-      </li>
-      <li class="menu">
-         <a href="#apply" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-            <div class="">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
-                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-               </svg>
-               <span>How to Apply</span> 
-            </div>
-            <div>
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-               </svg>
-            </div>
-         </a>
-         <ul class="collapse submenu list-unstyled" id="apply" data-parent="#accordionExample">
-            <li> <a href="<?=base_url('juggler/apply')?>"> How to Apply </a> </li>
-            <li> <a href="<?=base_url('juggler/apply/add')?>"> Add Apply </a> </li>
-         </ul>
-      </li>
-      <li class="menu">
-         <a href="#book" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-            <div class="">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
-                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-               </svg>
-               <span>Book Online</span> 
-            </div>
-            <div>
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-               </svg>
-            </div>
-         </a>
-         <ul class="collapse submenu list-unstyled" id="book" data-parent="#accordionExample">
-            <li> <a href="<?=base_url('juggler/book_online')?>"> Book Published </a> </li>
-            <li> <a href="<?=base_url('juggler/book_online/add')?>"> Add Book Published </a> </li>
-         </ul>
-      </li>
+      
       <li class="menu">
          <a href="#users" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <div class="">
@@ -490,6 +493,28 @@
          <ul class="collapse submenu list-unstyled" id="users" data-parent="#accordionExample">
             <li> <a href="<?=base_url('juggler/users')?>"> Users </a> </li>
             <li> <a href="<?=base_url('juggler/users/add')?>"> Add Users </a> </li>
+         </ul>
+      </li>
+      <li class="menu">
+         <a href="#users" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <div class="">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+               </svg>
+               <span>Request</span> 
+            </div>
+            <div>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+               </svg>
+            </div>
+         </a>
+         <ul class="collapse submenu list-unstyled" id="users" data-parent="#accordionExample">
+            <li> <a href="<?=base_url('juggler/request')?>"> Consultation Request </a> </li>
+            <li> <a href="<?=base_url('juggler/request/callRequest')?>"> Call Request </a> </li>
          </ul>
       </li>
       </ul>

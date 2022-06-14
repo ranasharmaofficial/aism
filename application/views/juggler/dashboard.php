@@ -55,7 +55,7 @@ redirect('juggler/login');
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+        <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
           <div class="widget widget-five yellow">
             <div class="widget-content">              
               <div class="w-content">
@@ -66,7 +66,7 @@ redirect('juggler/login');
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
           <div class="widget widget-five blue">
             <div class="widget-content">              
@@ -79,7 +79,7 @@ redirect('juggler/login');
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+        <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
           <div class="widget widget-five sky">
             <div class="widget-content">              
               <div class="w-content">
@@ -150,7 +150,7 @@ redirect('juggler/login');
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
           <div class="widget widget-five maroon">
             <div class="widget-content">              

@@ -24,9 +24,9 @@
 
               <ul>
 
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+                <li class="active"><a href="<?=base_url('')?>">Home</a></li>
+                <li><a href="<?=base_url('about-us.html')?>">About Us</a></li>
+                <li><a href="<?=base_url('contact-us.html')?>">Contact Us</a></li>
 
               </ul>
 
